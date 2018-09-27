@@ -1,13 +1,1 @@
-featherjs query
 
-query: {key:value}
-
-$limit, number => collection.limit(number)
-$skip, number => collection.offset(number)
-$sort, object => collection.orderBy("name") + collection.orderBy("name").desc() 
-$select, array => collection.where()
-$in + $nin, array
-$lt, $lte, number,
-$gt, $gte, number
-$ne, 
-$or
