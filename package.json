@@ -1,0 +1,31 @@
+{
+  "name": "pouchdb-service",
+  "version": "1.0.0",
+  "description": "pouchdb service for feathers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zlankouapieu/pouchdb-feathersjs-client.git"
+  },
+  "keywords": [
+    "pouchdb",
+    "service",
+    "feathers",
+    "feathersjs",
+    "indexdb",
+    "browser",
+    "websql",
+    "webpack",
+    "database",
+    "orm"
+  ],
+  "author": "elsekoya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zlankouapieu/pouchdb-feathersjs-client/issues"
+  },
+  "homepage": "https://github.com/zlankouapieu/pouchdb-feathersjs-client#readme"
+}
