@@ -5,24 +5,28 @@ PouchDB.plugin(pfind);
 
 
 export default class FPouchdb{
-    constructor(database_name="MdbDataBase", fields=[]){
+    constructor(database_name="MdbDataBase", fields=[], paginate = {default: 2,max: 4}){
         this.db = new PouchDB(database_name)
         this.collections = null
         this.res = null
+        this.limit = paginate.default
         this.cretaIndex(fields)
     }
 
-    async find(params){
-       
+    async find(params={query:{}, page:1}){
+        /**
+         * define in params page and limit
+         */
         this.res = []
         try {
             const sval = params.query
-            this.res =  await this.db.find({selector:sval})
+            const page = params.page
+            const limit = this.limit
+            this.res =  await this.db.find({selector:sval,limit:limit,skip:limit*(page-1)})
             console.log(this.res);
             return this.res    
         } catch (error) {
             console.log(error);
-            
         }
         
     }
