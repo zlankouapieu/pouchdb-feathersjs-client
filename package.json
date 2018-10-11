@@ -1,31 +1,31 @@
 {
-  "name": "pouchdb-service",
+  "name": "pouchdb-feathersjs-client",
+  "description": "A featherjs pouchdb client side",
   "version": "1.0.0",
-  "description": "pouchdb service for feathers",
-  "main": "index.js",
+  "author": "zlankouapieu <zlankouapieu@gmail.com>",
+  "license": "GPL 3",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zlankouapieu/pouchdb-feathersjs-client.git"
+  "dependencies": {
+    "@feathersjs/client": "^3.7.3",
+    "pouchdb": "^7.0.0",
+    "pouchdb-find": "^7.0.0"
   },
-  "keywords": [
-    "pouchdb",
-    "service",
-    "feathers",
-    "feathersjs",
-    "indexdb",
-    "browser",
-    "websql",
-    "webpack",
-    "database",
-    "orm"
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
   ],
-  "author": "elsekoya",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/zlankouapieu/pouchdb-feathersjs-client/issues"
-  },
-  "homepage": "https://github.com/zlankouapieu/pouchdb-feathersjs-client#readme"
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.0.5",
+    "webpack": "^3.6.0",
+    "webpack-dev-server": "^2.9.1"
+  }
 }
