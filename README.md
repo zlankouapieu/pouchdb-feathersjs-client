@@ -21,6 +21,11 @@ clone git
 # use in webpack 
 import {FPouchdb,fapp} from "pouchdb-service"
 
+this module create feathersjs client app in appjs
+and create pouchdb service for feathersjs app in PouchF
 
+is work in browser and webpack
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+ [pouchdb query](https://pouchdb.com/guides/mango-queries.html).
+ [pouchdb ](https://pouchdb.com/guides/setup-pouchdb.html).
+ [featherjs client](https://docs.feathersjs.com/api/client.html)
