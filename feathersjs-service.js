@@ -3,7 +3,7 @@ import  pfind from "pouchdb-find";
 PouchDB.plugin(pfind);
 
 
-class FPouchdb{
+class PouchF{
     constructor(database_name="MdbDataBase", fields=[], paginate = {default: 2,max: 4}){
         this.db = new PouchDB(database_name)
         this.collections = null
@@ -86,4 +86,4 @@ class FPouchdb{
     }
 }
 
-export default FPouchdb 
+export default PouchF 

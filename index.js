@@ -1,8 +1,8 @@
-import FPouchdb from "./feathersjs-service";
+import PouchF from "./feathersjs-service";
 import fapp from "./feathersjs-app";
 
 try {
-    window.PouchF = FPouchdb
+    window.PouchF = PouchF
     window.fapp = fapp
     
 } catch (error) {
@@ -10,6 +10,6 @@ try {
 }
 
 export default {
-    PouchF:FPouchdb,
+    PouchF,
     fapp
 }
