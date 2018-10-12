@@ -1,6 +1,5 @@
-const feathers = require('@feathersjs/client');
-const client = feathers();
+import  feathers from '@feathersjs/client';
+const fapp = feathers();
 
-module.exports = {
-    fapp:client   
-}
+
+export default fapp 

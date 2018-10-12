@@ -1,5 +1,5 @@
-var PouchDB = require("pouchdb");
-var  pfind = require("pouchdb-find");
+import PouchDB from "pouchdb";
+import  pfind from "pouchdb-find";
 PouchDB.plugin(pfind);
 
 
@@ -86,6 +86,4 @@ class FPouchdb{
     }
 }
 
-module.exports = {
-    FPouchdb:FPouchdb
-}
+export default FPouchdb 

@@ -6,7 +6,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'pouchdb-service.js'
+    filename: 'app.js'
   },
   module: {
     rules: [
@@ -38,9 +38,9 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
+      sourceMap: false,
       compress: {
-        warnings: false
+        warnings: true
       }
     }),
     new webpack.LoaderOptionsPlugin({
