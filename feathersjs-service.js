@@ -25,7 +25,7 @@ class PouchF{
         this.res = []
         try {
              
-            this.res =  await this.db.find({selector:params.query,limit:params.limit,skip:params.skip,sort:sort})
+            this.res =  await this.db.find({selector:params.query,limit:params.limit,skip:params.skip})
             let total = this.res.docs.length            
             return {res:this.res.docs, limit, skip, total}    
         } catch (error) {
