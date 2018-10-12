@@ -14,24 +14,17 @@ class PouchF{
 
     async count(params={query:{}}){
         const res = await this.db.find({selector:params.query})
-        
         return res.docs.length
     }
 
-    async find(params={query:{}, limit:10, skip:0, sort:[]}){
+    async find({query={}, limit=10, skip=0}){
         /**
          * define in params page and limit
          */
         this.res = []
         try {
-            if( Object.keys(params.query).length > 0){
-                this.res =  await this.db.find({selector:params.query,limit:params.limit,skip:params.skip})
-                let total = this.res.docs.length
-            }else{
-                this.res =  await this.db.find({limit:params.limit,skip:params.skip})
-                let total = this.res.docs.length
-            }
-                        
+            this.res =  await this.db.find({selector:query,limit,skip})
+            let total = this.res.docs.length
             return {res:this.res.docs, limit, skip, total}    
         } catch (error) {
             console.log(error);

@@ -1,7 +1,7 @@
 {
   "name": "pouchdb-feathersjs-client",
   "description": "A featherjs pouchdb client side",
-  "version": "2.0.12",
+  "version": "2.0.14",
   "author": "zlankouapieu <zlankouapieu@gmail.com>",
   "license": "GPL 3",
   "scripts": {
