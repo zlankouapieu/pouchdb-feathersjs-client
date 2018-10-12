@@ -24,9 +24,9 @@ class PouchF{
          */
         this.res = []
         try {
-            const res = await this.db.find({selector:sval})
-            let total = res.docs.length 
+             
             this.res =  await this.db.find({selector:params.query,limit:params.limit,skip:params.skip,sort:sort})
+            let total = this.res.docs.length            
             return {res:this.res.docs, limit, skip, total}    
         } catch (error) {
             console.log(error);
