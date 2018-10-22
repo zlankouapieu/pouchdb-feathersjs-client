@@ -8,6 +8,7 @@ class PouchF{
         this.db = new PouchDB(database_name)
         this.collections = null
         this.res = null
+        this.pagination={$limit:10, $skip:0}
         this.limit = paginate.default
         this.cretaIndex(fields)
     }
@@ -17,15 +18,45 @@ class PouchF{
         return res.docs.length
     }
 
-    async find({query={}, limit=10, skip=0}){
+    async find(params){
         /**
          * define in params page and limit
          */
-        this.res = []
+
+        let limit = 5
+        let skip = 0
         try {
-            this.res =  await this.db.find({selector:query,limit,skip})
-            let total = this.res.docs.length
-            return {res:this.res.docs, limit, skip, total}    
+            this.res = []
+            if (params.pagination && params.pagination.$limit) {
+            
+                limit = params.pagination.$limit
+            } else {
+                limit = this.pagination.$limit    
+            }
+            if (params.pagination && params.pagination.$skip) {
+                skip = params.pagination.$skip
+            } else {
+                skip = this.pagination.$skip    
+            }
+            
+            
+            
+        } catch (error) {
+            console.log(error);
+            
+        }
+        
+        
+        try {
+            this.res =  await this.db.find({selector:params.query,limit,skip})
+            //let total = this.res.docs.length
+            let total = await this.count()
+            try {
+                return {data:this.res.docs, limit, skip, total}    
+            } catch (error) {
+                return {data:[], limit:0, skip:0, total:0}
+            }
+                
         } catch (error) {
             console.log(error);
         }
@@ -52,7 +83,6 @@ class PouchF{
         } catch (error) {
             return false
         }
-        
     }
 
     async update(id, data, params){
